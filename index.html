@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <LINK REL=StyleSheet HREF="desing.css" TYPE="text/css" MEDIA=screen>
+    <title>LO-FI Radio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-color: black;">
+
+    <div id="divVideo1">
+        <video autoplay muted loop id="myVideo0">
+            <source src="multimedia/video0.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <img id="myVideo0" src="multimedia/video0.gif" alt="image">
+
+    <div class="content">
+        <h1>Video</h1>
+        <button id="right" onclick="">Anterior</button>
+        <button id="myBtn" onclick="myFunction()">Escuchar Sonido</button>
+        <button id="right2" onclick="">Siguiente</button>
+    </div>
+
+    <div class="button">
+        <div class="center">
+            <button id="play" onclick="Play()">Play</button>
+        </div>
+    </div>
+
+    <div class="title">
+        <h1>LoFi - Radio</h1>
+        <p>Chill Music Stream</p>
+    </div>
+</body>
+<script type="text/javascript">
+
+    var randInterval = 0;
+    var songList = ["song1", "song2", "song3", "song4", "song5", "song6", "song7", "song8", "song9", "song10", "song12", "song13", "song14", "song15", "song16", "song17", "song18", "song19", "song20", "song21", "song22", "song23", "song24", "song25", "song26", "song27", "song28", "song29", "song30", "song31", "song32", "song33", "song34"];
+    var myAudio = new Audio("multimedia/music/" + songList[Math.floor(Math.random() * songList.length)] + ".mp3");
+
+    function getRandomSong() {
+        var randSong = songList[Math.floor(Math.random() * songList.length)]
+        myAudio.src = "multimedia/music/" + randSong + ".mp3";
+        myAudio.id = "myAudio";
+        myAudio.load();
+        myAudio.controls = false
+        myAudio.preload = false;
+    }
+
+    function getRandomInterval(variation, range) {
+        randInterval = Math.floor((Math.random() * 1000 * variation) + (1000 * range));
+        return randInterval;
+    }
+
+    var play1 = false
+
+    function playMusic() {
+        getRandomSong();
+        myAudio.play();
+        play1 = true
+    }
+
+    function pauseMusic() {
+        myAudio.pause()
+        play1 = false
+    }
+
+
+
+    var video = document.getElementById("myVideo0");
+
+    var btn = document.getElementById("myBtn");
+
+    function myFunction() {
+        if (video.muted == true) {
+            video.muted = false;
+            video.volume = 0.5
+            btn.innerHTML = "Mutear";
+        } else {
+            video.muted = true;
+            btn.innerHTML = "Escuchar";
+        }
+    }
+
+    var c = 0;
+
+    $(document).ready(function () {
+
+        $("#right2").click(function () {
+            if (c < 1) {
+                c++
+                var $video = $('#divVideo video'),
+                    videoSrc = $('source', $video).attr('src', "multimedia/video" + c.toString() + ".mp4");
+                $video[0].load();
+                $video[0].play();
+            }
+        });
+        $("#right").click(function () {
+            if (c > 0) {
+                c--
+                var $video = $('#divVideo video'),
+                    videoSrc = $('source', $video).attr('src', "multimedia/video" + c.toString() + ".mp4");
+                $video[0].load();
+                $video[0].play();
+            }
+        });
+    });
+
+    var btnPlay = document.getElementById("play");
+
+    function Play() {
+        if (play1 == false) {
+            play1 = true
+            playMusic();
+            btnPlay.innerHTML = "Pause"
+            myAudio.addEventListener('ended', function () { setTimeout(function () { playMusic(); }, getRandomInterval(2, 2)); }, false);
+        } else {
+            play1 = false
+            pauseMusic();
+            btnPlay.innerHTML = "Play"
+        }
+    }
+
+</script>
+
+</html>
