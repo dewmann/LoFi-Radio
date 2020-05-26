@@ -12,33 +12,52 @@
 
 <body style="background-color: black;">
 
-    <div id="divVideo1">
+    <div id="divVideo">
         <video autoplay muted loop id="myVideo0">
             <source src="multimedia/video0.mp4" type="video/mp4" />
         </video>
-    </div>
-
-    <img id="myVideo0" src="multimedia/video0.gif" alt="image">
-
-    <div class="content">
-        <h1>Video</h1>
-        <button id="right" onclick="">Anterior</button>
-        <button id="myBtn" onclick="myFunction()">Escuchar Sonido</button>
-        <button id="right2" onclick="">Siguiente</button>
-    </div>
-
-    <div class="button">
-        <div class="center">
-            <button id="play" onclick="Play()">Play</button>
-        </div>
     </div>
 
     <div class="title">
         <h1>LoFi - Radio</h1>
         <p>Chill Music Stream</p>
     </div>
+
+    <div class="content">
+        <h1>Controles</h1>
+        <button id="play" class="buttonplay" onclick="Play()">Play</button>
+
+        <button id="mainup" onclick="Mup()">Subir</button>
+        <button id="maindown" onclick="Mdown()">Bajar</button>
+
+        <h1></h1>
+
+        <button id="right" onclick="">Anterior</button>
+        <button id="myBtn" onclick="myFunction()">Escuchar Sonido</button>
+        <button id="right2" onclick="">Siguiente</button>
+
+        <button id="effectup" onclick="Mup()">Subir</button>
+        <button id="effectdown" onclick="Mdown()">Bajar</button>
+    </div>
 </body>
 <script type="text/javascript">
+
+    //Volumenes
+
+    var btnmsubir = document.getElementById("mainup");
+    var btnmbajar = document.getElementById("maindown");
+
+    function Mup() {
+        audio=audio.volume + 0.10;
+    }
+
+    function Mdown() {
+        audio=audio.volume - 0.10;
+    }
+
+    
+
+    //Generador Playlist Aleatoria
 
     var randInterval = 0;
     var songList = ["song1", "song2", "song3", "song4", "song5", "song6", "song7", "song8", "song9", "song10", "song12", "song13", "song14", "song15", "song16", "song17", "song18", "song19", "song20", "song21", "song22", "song23", "song24", "song25", "song26", "song27", "song28", "song29", "song30", "song31", "song32", "song33", "song34"];
@@ -49,7 +68,7 @@
         myAudio.src = "multimedia/music/" + randSong + ".mp3";
         myAudio.id = "myAudio";
         myAudio.load();
-        myAudio.controls = false
+        myAudio.controls = true;
         myAudio.preload = false;
     }
 
@@ -58,20 +77,7 @@
         return randInterval;
     }
 
-    var play1 = false
-
-    function playMusic() {
-        getRandomSong();
-        myAudio.play();
-        play1 = true
-    }
-
-    function pauseMusic() {
-        myAudio.pause()
-        play1 = false
-    }
-
-
+    //Mutear Video
 
     var video = document.getElementById("myVideo0");
 
@@ -87,6 +93,8 @@
             btn.innerHTML = "Escuchar";
         }
     }
+
+    //Cambiar Video
 
     var c = 0;
 
@@ -112,13 +120,17 @@
         });
     });
 
+    //Play y Reset Audio
+
     var btnPlay = document.getElementById("play");
+
+    var play1 = false
 
     function Play() {
         if (play1 == false) {
             play1 = true
             playMusic();
-            btnPlay.innerHTML = "Pause"
+            btnPlay.innerHTML = "Reset"
             myAudio.addEventListener('ended', function () { setTimeout(function () { playMusic(); }, getRandomInterval(2, 2)); }, false);
         } else {
             play1 = false
@@ -127,6 +139,16 @@
         }
     }
 
-</script>
+    function playMusic() {
+        getRandomSong();
+        myAudio.play();
+        play1 = true
+    }
 
+    function pauseMusic() {
+        myAudio.pause()
+        play1 = false
+    }
+
+</script>
 </html>
