@@ -55,7 +55,6 @@ box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
 
   #main{
     box-shadow: #70A5FF;
-    margin-right: 40%;
     margin-bottom: 20px;
   border-radius: 15px 15px 15px 15px;
 -moz-border-radius: 15px 15px 15px 15px;
@@ -68,7 +67,6 @@ box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
 
 
   #effect{
-    margin-right: 20%;
     margin-bottom: 20px;
   border-radius: 15px 15px 15px 15px;
 -moz-border-radius: 15px 15px 15px 15px;
