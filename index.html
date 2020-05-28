@@ -19,48 +19,31 @@
         </video>
     </div>
 
-    
-
     <div class="title">
         <h1>LoFi - Radio</h1>
         <p>Chill Music Stream</p>
     </div>
-    
-    <a href="https://www.contadorvisitasgratis.com" title="contador de visitas para blog"><img src="https://counter11.stat.ovh/private/contadorvisitasgratis.php?c=mz7dj7pqqte4wch7abxk91d4ete5eztb" title="contador de visitas para blog" alt="contador de visitas para blog" style="position: fixed;"></a>
+
+    <a href="https://www.contadorvisitasgratis.com" title="contador de visitas para blog"><img
+            src="https://counter11.stat.ovh/private/contadorvisitasgratis.php?c=mz7dj7pqqte4wch7abxk91d4ete5eztb"
+            title="contador de visitas para blog" alt="contador de visitas para blog" style="position: fixed;"></a>
 
     <div class="content">
         <h1>Controles</h1>
         <button id="play" class="buttonplay" onclick="Play()">Play</button>
 
-        <button id="mainup" onclick="Mup()">Subir</button>
-        <button id="maindown" onclick="Mdown()">Bajar</button>
+        <input id="main" type="range" step="0.05" min="0" max="1" value="1">
 
         <h1></h1>
 
         <button id="right" onclick="">Anterior</button>
-        <button id="myBtn" onclick="myFunction()">Escuchar Sonido</button>
+        <button id="myBtn" onclick="myFunction()">Escuchar Video</button>
         <button id="right2" onclick="">Siguiente</button>
 
-        <button id="effectup" onclick="Mup()">Subir</button>
-        <button id="effectdown" onclick="Mdown()">Bajar</button>
+        <input id="effect" type="range" step="0.05" min="0" max="1" value="0.5">
     </div>
 </body>
 <script type="text/javascript">
-
-    //Volumenes
-
-    var btnmsubir = document.getElementById("mainup");
-    var btnmbajar = document.getElementById("maindown");
-
-    function Mup() {
-        audio=audio.volume + 0.10;
-    }
-
-    function Mdown() {
-        audio=audio.volume - 0.10;
-    }
-
-    
 
     //Generador Playlist Aleatoria
 
@@ -155,5 +138,44 @@
         play1 = false
     }
 
+    //Volumenes
+
+    var barraAudio = document.getElementById("main");
+    var barraVideo = document.getElementById("effect");
+
+    var oldvolumeA = 1;
+    var oldvolumeV = 0.5;
+
+    barraAudio.addEventListener("change", function (ev) {
+        myAudio.volume = ev.target.value;
+    }, true);
+
+    mute.addEventListener("change", function (ev) {
+        if (ev.target.checked) {
+            oldvolumeA = myAudio.volume;
+            myAudio.volume = 0;
+            barraAudio.value = 0;
+        } else {
+            myAudio.volume = oldvolume;
+            barraAudio.value = oldvolumeA;
+        }
+    }, true);
+
+    barraVideo.addEventListener("change", function (ev) {
+        video.volume = ev.target.value;
+    }, true);
+
+    mute.addEventListener("change", function (ev) {
+        if (ev.target.checked) {
+            oldvolumeA = video.volume;
+            video.volume = 0;
+            barraVideo.value = 0;
+        } else {
+            video.volume = oldvolume;
+            barraVideo.value = oldvolumeA;
+        }
+    }, true);
+
 </script>
+
 </html>
