@@ -1,0 +1,145 @@
+
+* {
+  font-family: 'Dancing Script', cursive;
+  margin: 0 auto;
+}
+
+#myVideo0 {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  
+  }
+  
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: whitesmoke;
+    width: 100%;
+    padding: 50px;
+    font-size: 20px;
+  }
+
+  .title{
+    position: relative;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 25px;
+    color:whitesmoke;
+    padding: 3%;
+  }
+
+  .buttonplay{
+  background: whitesmoke;
+  color: black;
+  width: 100px;
+  font-size: 25px;
+  padding: 10px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 15px 15px 15px 15px;
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border: 0px solid #000000;
+-webkit-box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+  }
+
+  #main{
+    box-shadow: #70A5FF;
+    margin-bottom: 20px;
+  border-radius: 15px 15px 15px 15px;
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border: 0px solid #000000;
+-webkit-box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+  }
+
+
+  #effect{
+    margin-bottom: 20px;
+  border-radius: 15px 15px 15px 15px;
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border: 0px solid #000000;
+-webkit-box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+  }
+  
+  #myBtn {
+    margin-right:10px;
+    margin-bottom: 10px;
+    width: 200px;
+    font-size: 25px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: whitesmoke;
+    cursor: pointer;
+    border-radius: 15px 15px 15px 15px;
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border: 0px solid #000000;
+-webkit-box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+  }
+  
+  #myBtn:hover {
+    background: whitesmoke;
+    color: black;
+  }
+
+  #right {
+    margin-right:10px;
+    margin-bottom: 10px;
+    width: 100px;
+    font-size: 25px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: whitesmoke;
+    cursor: pointer;
+    border-radius: 15px 15px 15px 15px;
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border: 0px solid #000000;
+-webkit-box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+  }
+  
+  #right:hover {
+    background: #ddd;
+    color: black;
+  }
+
+  #right2 {
+    margin-right:10px;
+    width: 100px;
+    font-size: 25px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: whitesmoke;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 15px 15px 15px 15px;
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border: 0px solid #000000;
+-webkit-box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+box-shadow: 11px 9px 26px 0px rgba(0,0,0,0.75);
+  }
