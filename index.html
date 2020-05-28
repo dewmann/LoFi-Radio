@@ -8,6 +8,7 @@
     <title>LO-FI Radio</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpeg" href="/multimedia/iconos/ico.jpg"/>
 </head>
 
 <body style="background-color: black;">
@@ -31,6 +32,7 @@
     <div class="content">
         <h1>Controles</h1>
         <button id="play" class="buttonplay" onclick="Play()">Play</button>
+        <button id="pause" class="buttonplay" onclick="Play()">Pause</button>
 
         <input id="main" type="range" step="0.05" min="0" max="1" value="1">
 
@@ -137,6 +139,8 @@
         myAudio.pause()
         play1 = false
     }
+
+    $('.pause').trigger("pause");
 
     //Volumenes
 
